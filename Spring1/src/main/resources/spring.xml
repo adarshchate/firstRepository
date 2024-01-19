@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- bean definitions here -->
+    <!--    spring bean xml config -->
+    <!--  scope ->  singleton for creating one object - Default -->
+    <!--    scope -> prototype  definition to any number of object instances. -->
+
+    <!--    <bean id="alien" class="org.example.Alien" scope="prototype">-->
+    <bean id="alien" class="org.example.Alien" autowire="byName">
+
+        <!--  (Setter Injection)-  property set the value  only on setters is active/present -->
+        <!--        <property name="age" value="22"/>-->
+
+        <!--        ref attribute - use id to refer object  -->
+        <!--        <property name="lap" ref="lap"/>-->
+
+        <!--        OR -->
+
+
+        <!--        constructor injection  -->
+        <!--        <constructor-arg type="int" value="23"/>-->
+        <!--        <constructor-arg type="org.example.Laptop" ref="lap" />-->
+
+        <!--                <constructor-arg index="0" value="23"/>-->
+        <!--                <constructor-arg index="1" ref="lap" />-->
+
+        <!--        need to used @ConstructorProperties in constructor for getting name -->
+        <!--        <constructor-arg name="lap" ref="lap"/>-->
+        <!--        <constructor-arg name="age" value="23"/>-->
+
+        <property name="age" value="24"/>
+        <!--        <property name="com" ref="lap"/>-->
+        <property name="com">
+            <!--            inner bean -->
+            <!--            <bean id="com" class="org.example.Desktop">-->
+            <!--            </bean>-->
+        </property>
+
+    </bean>
+
+    <!--    <bean id="lap" class="org.example.Laptop">-->
+    <bean id="com" class="org.example.Desktop">
+    </bean>
+    <!--   object not created automatic it create only when it's required -->
+    <bean id="lap" class="org.example.Laptop" lazy-init="true"/>
+
+
+</beans>
