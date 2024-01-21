@@ -34,11 +34,12 @@
 
         <property name="age" value="24"/>
         <!--        <property name="com" ref="lap"/>-->
-        <property name="com">
-            <!--            inner bean -->
-            <!--            <bean id="com" class="org.example.Desktop">-->
-            <!--            </bean>-->
-        </property>
+
+<!--        inner bean -->
+<!--        <property name="com">-->
+<!--            <bean id="com" class="org.example.Desktop">-->
+<!--            </bean>-->
+<!--        </property>-->
 
     </bean>
 
