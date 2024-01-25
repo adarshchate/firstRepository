@@ -18,7 +18,7 @@ public class SpringBootFirstAppApplication {
 //        System.out.println("Age " + obj.getAge());
 //        obj.code();
 
-        LaptopService service = context.getBean(LaptopService.class);
+        LaptopService service=context.getBean(LaptopService.class);
 
         Laptop lap = context.getBean(Laptop.class);
         service.addLaptop(lap); /// add into service class
